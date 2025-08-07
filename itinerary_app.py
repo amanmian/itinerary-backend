@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 import requests
 from flask_cors import CORS
 
+load_dotenv() 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 app = Flask(__name__)
 CORS(app)
