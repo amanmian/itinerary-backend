@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: itinerary-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: OPENAI_API_KEY
+        value: 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
