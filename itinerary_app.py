@@ -7,8 +7,7 @@ from datetime import datetime, timedelta
 import requests
 from flask_cors import CORS
 
-openai.api_key = "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"  # Keep secure
-
+openai_api_key = os.getenv("OPENAI_API_KEY")
 app = Flask(__name__)
 CORS(app)
 
@@ -161,7 +160,8 @@ Also recommend 1–2 hotels (budget-specific, family/friendly, realistic names &
 Only return valid JSON. Do not use markdown.
         """
 
-        client = openai.OpenAI(api_key="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")
+        api_key = os.getenv("OPENAI_API_KEY")
+        client = openai.OpenAI(api_key=api_key)
 
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
